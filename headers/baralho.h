@@ -25,6 +25,7 @@ void removerCartaBaralho(struct Baralho *baralho, struct Carta carta);
 struct Carta sacarCarta(struct Baralho *baralho);
 struct Carta getCartaVazia();
 int isCartaVazia(struct Carta carta);
+int getValorCarta(struct Carta carta);
 
 struct Baralho preencherBaralho(struct Baralho baralho){
 	int posicao = 0;
@@ -104,6 +105,58 @@ struct Carta getCartaVazia(){
 
 int isCartaVazia(struct Carta carta){
 	return carta.numero == -1 ? 1 : 0;
+}
+
+int maoCheia(struct Carta mao[]){
+	if(mao[4].numero != -1){
+		return 1;
+	}else {
+		return 0;
+	}
+}
+
+int getValorCarta(struct Carta carta){
+	switch(carta.numero){
+		case 2: 
+			return 2;
+			break;
+		case 3: 
+			return 3;
+			break;
+		case 4: 
+			return 4;
+			break;
+		case 5: 
+			return 5;
+			break;
+		case 6: 
+			return 6;
+			break;
+		case 7: 
+			return 7;
+			break;
+		case 8: 
+			return 8;
+			break;
+		case 9: 
+			return 9;
+			break;
+		case 10: 
+			return 10;
+			break;
+		case 11: 
+			return 10;
+			break;
+		case 12: 
+			return 10;
+			break;
+		case 13: 
+			return 10;
+			break;	
+		default: 
+			return 0;
+			break;		
+	}
 }
 
 

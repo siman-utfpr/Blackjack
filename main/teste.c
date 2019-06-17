@@ -4,8 +4,6 @@
 #include <string.h>
 
 void main(){
-
-
 	struct Baralho baralho;
 	baralho = preencherBaralho(baralho);
 
@@ -27,11 +25,17 @@ void main(){
 	comprarCarta(mao, &baralho);
 	comprarCarta(mao, &baralho);
 
+	int valor1 = somaValorMao(mao, 1);
+	int valor2 = somaValorMao(mao, 11);
+
 	for(int i = 0; i < 5; i++){
 		printf("Número da carta %d: %d\n",i, mao[i].numero);
 		printf("Naipe da carta %d: %d\n",i, mao[i].naipe);
 		printf("Caminho da carta %d: %s\n",i, mao[i].caminhoImagem);
 	}
+
+	printf("%d\n", valor1);
+	printf("%d\n", valor2);
 
 /*	
 	
