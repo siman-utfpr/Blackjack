@@ -1,5 +1,4 @@
 #include <string.h>
-#include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
 
@@ -14,10 +13,9 @@ struct Baralho {
 };
 
 // Preenche o baralho com todas as cartas
-struct Baralho preencherBaralho(struct Baralho baralho);
+struct Baralho preencherBaralho();
 
-// Todas essas funções recebem o ponteiro do baralho porque uma carta deve ser removida do baralho 
-// original, que foi passado como parâmetro
+// Todas essas funções recebem o ponteiro do baralho porque uma carta deve ser removida do baralho original
 
 struct Carta sortearCarta(struct Baralho *baralho);
 int descobrirIndiceCarta(struct Baralho *baralho, struct Carta carta, int pos);
@@ -27,7 +25,8 @@ struct Carta getCartaVazia();
 int isCartaVazia(struct Carta carta);
 int getValorCarta(struct Carta carta);
 
-struct Baralho preencherBaralho(struct Baralho baralho){
+struct Baralho preencherBaralho(){
+	struct Baralho baralho;
 	int posicao = 0;
 	char aux[20];
 	for(int i = 1; i <= 13; i++){
@@ -85,8 +84,6 @@ int descobrirIndiceCarta(struct Baralho *baralho, struct Carta carta, int pos){
 void removerCartaBaralho(struct Baralho *baralho, struct Carta carta){
 	int indice = descobrirIndiceCarta(baralho, carta, 0);
 	baralho->baralho[indice] = getCartaVazia();
-	//baralho->baralho[indice].numero = -1;
-	//baralho->baralho[indice].naipe = -1;
 }
 
 struct Carta sacarCarta(struct Baralho *baralho){
@@ -105,14 +102,6 @@ struct Carta getCartaVazia(){
 
 int isCartaVazia(struct Carta carta){
 	return carta.numero == -1 ? 1 : 0;
-}
-
-int maoCheia(struct Carta mao[]){
-	if(mao[4].numero != -1){
-		return 1;
-	}else {
-		return 0;
-	}
 }
 
 int getValorCarta(struct Carta carta){
@@ -158,6 +147,3 @@ int getValorCarta(struct Carta carta){
 			break;		
 	}
 }
-
-
-
