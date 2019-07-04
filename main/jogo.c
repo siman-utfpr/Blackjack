@@ -5,6 +5,7 @@
 
 // Não incluo mais o "baralho.h" aqui pq ele já está em blackjack.h
 
+// sudo apt-get install libgtk-3-dev
 // Em headers: gcc -o baralho.o -c baralho.c
 // Em headers: gcc -o blackjack.o -c blackjack.c
 // gcc jogo.c ../headers/baralho.o ../headers/blackjack.o `pkg-config --cflags --libs gtk+-3.0` -o jogo
